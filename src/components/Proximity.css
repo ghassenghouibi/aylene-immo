@@ -1,0 +1,35 @@
+.prox-score { display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; padding: 26px 28px; border-radius: var(--radius); }
+.prox-good { background: var(--sage-soft); } .prox-fair { background: var(--blue-soft); } .prox-low { background: var(--sand-soft); }
+.prox-gauge { position: relative; width: 104px; height: 104px; border-radius: 50%; display: grid; place-items: center; flex: none;
+  background: conic-gradient(currentColor var(--v), rgba(255,255,255,.55) 0); color: var(--blue); }
+.prox-good .prox-gauge { color: var(--sage); } .prox-low .prox-gauge { color: var(--sand); }
+.prox-gauge::after { content: ''; position: absolute; inset: 9px; border-radius: 50%; background: #fff; }
+.prox-gauge span { position: relative; z-index: 1; font-family: var(--font-display); font-size: 30px; color: var(--blue-ink); }
+.prox-parts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; }
+.prox-parts li { display: grid; grid-template-columns: 1fr 88px; align-items: center; gap: 10px; }
+.prox-parts .bar { background: rgba(255,255,255,.7); }
+.prox-parts .bar > i { background: currentColor; }
+.prox-good .prox-parts { color: var(--sage); } .prox-fair .prox-parts { color: var(--blue); } .prox-low .prox-parts { color: var(--sand); }
+.prox-parts span.small { color: var(--ink-2); }
+
+.prox-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.prox-cat { padding: 20px; }
+.prox-cat-head { display: flex; align-items: center; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid var(--line-2); margin-bottom: 12px; color: var(--blue-deep); }
+.prox-ic { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; background: var(--blue-soft); flex: none; }
+.prox-cat ul { display: flex; flex-direction: column; gap: 10px; }
+.prox-cat li { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; font-size: 14px; }
+.prox-name { color: var(--ink); display: flex; flex-direction: column; }
+.prox-note { color: var(--muted); font-size: 12.5px; line-height: 1.35; }
+.prox-dist { text-align: right; flex: none; display: flex; flex-direction: column; align-items: flex-end; line-height: 1.3; }
+.prox-dist .num { font-weight: 600; font-size: 13.5px; }
+.prox-dist.on-foot .num { color: var(--sage); }
+.prox-more { display: block; margin-top: 12px; }
+
+.prox-hint { display: inline-flex; align-items: center; gap: 5px; font-size: 12.5px; color: var(--muted); }
+.prox-hint svg { color: var(--blue); flex: none; }
+@media (max-width: 1024px) { .prox-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) {
+  .prox-score { grid-template-columns: 1fr; gap: 18px; padding: 22px; }
+  .prox-parts { grid-template-columns: 1fr; }
+  .prox-grid { grid-template-columns: 1fr; }
+}

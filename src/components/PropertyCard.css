@@ -1,0 +1,25 @@
+.pc { position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s; }
+.pc:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.pc-media { display: block; position: relative; }
+.pc-photo { aspect-ratio: 4 / 3; }
+.pc-photo img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.pc:hover .pc-photo img { transform: scale(1.04); }
+.pc-badges { position: absolute; top: 12px; left: 12px; display: flex; gap: 6px; flex-wrap: wrap; }
+.pc-trust { position: absolute; bottom: 12px; left: 12px; }
+.pc-fav { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,.92); color: var(--ink-2); display: grid; place-items: center; transition: color .15s, transform .15s; z-index: 2; }
+.pc-fav:hover { transform: scale(1.08); }
+.pc-fav.on { color: var(--rose); }
+.pc-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.pc-kicker { font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); }
+.pc-title { margin: 0; }
+.pc-title a:hover { color: var(--blue); }
+.pc-loc { display: flex; align-items: center; gap: 5px; font-size: 13px; color: var(--muted); }
+.pc-price-row { display: flex; align-items: baseline; justify-content: space-between; gap: 6px 10px; margin-top: 6px; flex-wrap: wrap; }
+.pc-price { white-space: nowrap; }
+.pc-price { font-family: var(--font-display); font-size: 24px; color: var(--blue-ink); }
+.pc-price span { font-family: var(--font-body); font-size: 13px; color: var(--muted); }
+.pc-meta { display: flex; gap: 14px; flex-wrap: wrap; font-size: 13.5px; color: var(--ink-2); margin-top: 4px; }
+.pc-meta span { display: inline-flex; align-items: center; gap: 5px; }
+.pc-foot { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line-2); display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.pc-compact .pc-body { padding: 14px 16px 16px; }
+.pc-compact .pc-price { font-size: 20px; }

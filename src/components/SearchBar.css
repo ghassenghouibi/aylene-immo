@@ -1,0 +1,7 @@
+.sb { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 22px 24px 18px; box-shadow: var(--shadow); }
+.sb-seg { margin-bottom: 16px; }
+.sb-fields { display: grid; grid-template-columns: 1.2fr 1fr 1fr auto; gap: 14px; align-items: end; }
+.sb-submit { height: 48px; }
+.sb-check { margin-top: 14px; color: var(--ink-2); font-size: 14px; }
+@media (max-width: 900px) { .sb-fields { grid-template-columns: 1fr 1fr; } .sb-submit { grid-column: 1 / -1; } }
+@media (max-width: 560px) { .sb-fields { grid-template-columns: 1fr; } }
