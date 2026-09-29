@@ -135,7 +135,7 @@ export default function Property() {
                 <dt>Délai de vente moyen</dt><dd className="num">{zone.delai} jours</dd>
               </dl>
             </div>
-            <p className="small muted mt-12">Médiane calculée sur les transactions et mandats observés par Aylene dans le quartier sur 12 mois. Voir le <Link to="/quartiers" className="link" style={{ fontSize: 13 }}>baromètre des quartiers</Link>.</p>
+            <p className="small muted mt-12">Médiane calculée sur les transactions et mandats observés par Aylene dans le quartier sur 12 mois.</p>
           </section>
 
           {/* Description */}

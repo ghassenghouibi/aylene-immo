@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import Photo from './Photo'
-import { ArrowRight, Calendar, Compass, FileText, Key, Phone, Pin, Quote, Scale, Shield, Trend, User, WhatsApp } from './Icons'
-import { fmt, zoneCount, type Zone } from '../lib/listings'
+import { ArrowRight, Calendar, Compass, FileText, Key, Phone, Pin, Quote, Scale, Shield, User, WhatsApp } from './Icons'
 import { TESTIMONIALS, type Advisor } from '../data/agence'
 import './Blocks.css'
 
@@ -49,26 +48,6 @@ export function Steps({ dark = false }: { dark?: boolean }) {
         </li>
       ))}
     </ol>
-  )
-}
-
-export function ZoneCard({ zone: z, big = false }: { zone: Zone; big?: boolean }) {
-  return (
-    <Link to={`/acheter?zone=${z.slug}`} className={`zc ${big ? 'zc-big' : ''}`}>
-      <Photo src={z.photo} alt={z.name} className="zc-photo" tone="ph-dark" />
-      <div className="zc-veil" />
-      <div className="zc-body">
-        <div className="row between">
-          <span className="h-card" style={{ color: '#fff', fontSize: big ? 28 : 21 }}>{z.name}</span>
-          <span className="badge badge-glass"><Trend size={13} /> {z.tendance > 0 ? '+' : ''}{z.tendance.toLocaleString('fr-FR')} %</span>
-        </div>
-        <div className="row small" style={{ color: '#e6ebf2', gap: 14, marginTop: 6 }}>
-          <span className="num">{fmt(z.venteM2)} DT/m²</span>
-          <span>{zoneCount(z)} bien{zoneCount(z) > 1 ? 's' : ''}</span>
-        </div>
-        {big && <p className="small mt-12" style={{ color: '#d7dee8' }}>{z.ambiance}</p>}
-      </div>
-    </Link>
   )
 }
 

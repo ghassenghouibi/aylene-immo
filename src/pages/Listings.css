@@ -11,9 +11,6 @@
 .lp { padding-block: 32px 80px; }
 .lp-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
 .lp-empty { max-width: 640px; }
-.lp-map { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
-.lp-map .mapmock { position: sticky; top: 150px; min-height: 560px; }
-.lp-map-list { display: grid; gap: 16px; }
 .lp-note { display: flex; gap: 18px; align-items: flex-start; color: var(--blue-deep); }
 .lp-note strong { color: var(--ink); }
-@media (max-width: 900px) { .lp-map { grid-template-columns: 1fr; } .lp-map .mapmock { position: static; min-height: 280px; } .fb { top: 76px; } }
+@media (max-width: 900px) { 

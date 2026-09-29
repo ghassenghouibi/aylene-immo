@@ -4,9 +4,9 @@ import SearchBar from '../components/SearchBar'
 import PropertyCard from '../components/PropertyCard'
 import Photo from '../components/Photo'
 import { TrustBadge } from '../components/Trust'
-import { CtaSurMesure, Promises, Steps, Testimonials, ZoneCard } from '../components/Blocks'
-import { ArrowRight, Check, Shield, Trend } from '../components/Icons'
-import { LISTINGS, ZONES, fmt, priceCompact, zoneCount, type Rubrique } from '../lib/listings'
+import { CtaSurMesure, Promises, Steps, Testimonials } from '../components/Blocks'
+import { ArrowRight, Check, Shield } from '../components/Icons'
+import { LISTINGS, ZONES, fmt, priceCompact, type Rubrique } from '../lib/listings'
 import { trustOf } from '../lib/trust'
 import { estimate } from '../lib/estimate'
 import { useCountUp, useRevealAll } from '../hooks/useReveal'
@@ -36,7 +36,6 @@ export default function Home() {
     .slice(0, 4)
 
   const complet = LISTINGS.filter((l) => trustOf(l).level === 'complet').length
-  const zones = [...ZONES].sort((a, b) => zoneCount(b) - zoneCount(a)).slice(0, 5)
 
   // Mini-estimateur du bandeau
   const [ezone, setEzone] = useState('la-marsa')
@@ -173,22 +172,6 @@ export default function Home() {
                 <div className="small mt-8" style={{ color: '#c2ccd9' }}>soit ≈ {fmt(e.perM2)} DT/m² · médiane {e.zone.name} : {fmt(e.median)} DT/m²</div>
               </div>
             )}
-          </div>
-        </div>
-      </section>
-
-      {/* ---------- QUARTIERS ---------- */}
-      <section className="section">
-        <div className="container">
-          <div className="section-head reveal">
-            <div>
-              <div className="eyebrow">Baromètre</div>
-              <h2 className="h-section">Les quartiers, <em>chiffres à l'appui</em></h2>
-            </div>
-            <Link to="/quartiers" className="link">Tous les quartiers <Trend size={16} /></Link>
-          </div>
-          <div className="zones reveal reveal-stagger">
-            {zones.map((z, i) => <ZoneCard key={z.slug} zone={z} big={i === 0} />)}
           </div>
         </div>
       </section>

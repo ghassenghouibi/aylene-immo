@@ -9,7 +9,6 @@ const NAV = [
   { to: '/acheter', label: 'Acheter' },
   { to: '/louer', label: 'Louer' },
   { to: '/estimer', label: 'Estimer' },
-  { to: '/quartiers', label: 'Quartiers' },
   { to: '/accompagnement', label: 'Notre méthode' },
   { to: '/contact', label: 'Contact' },
 ]

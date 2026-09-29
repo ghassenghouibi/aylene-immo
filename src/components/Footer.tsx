@@ -26,7 +26,6 @@ export default function Footer() {
               <li><Link to="/acheter">Acheter</Link></li>
               <li><Link to="/louer">Louer</Link></li>
               <li><Link to="/estimer">Estimer mon bien</Link></li>
-              <li><Link to="/quartiers">Baromètre des quartiers</Link></li>
               <li><Link to="/accompagnement">Notre méthode</Link></li>
               <li><Link to="/recherche-sur-mesure">Recherche sur-mesure</Link></li>
             </ul>

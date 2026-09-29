@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import PropertyCard from '../components/PropertyCard'
-import { MapMock, Pagination } from '../components/Blocks'
-import { ArrowRight, Bus, Chevron, Grid, Map, Pin, Shield, Sparkle, X } from '../components/Icons'
+import { Pagination } from '../components/Blocks'
+import { ArrowRight, Bus, Chevron, Pin, Shield, Sparkle, X } from '../components/Icons'
 import {
   BUDGETS_LOCATION, BUDGETS_VENTE, CATEGORIES, LISTINGS, RUBRIQUE_LABEL, RUBRIQUE_TITLE, ZONES,
   applyFilters, fmt, zoneCount, type Filters, type Rubrique,
@@ -25,7 +25,6 @@ function Dropdown({ label, active, children }: { label: string; active?: boolean
 export default function Listings({ rubrique, favoritesOnly = false }: { rubrique: Rubrique; favoritesOnly?: boolean }) {
   const [sp, setSp] = useSearchParams()
   const { ids: favIds } = useFavorites()
-  const [view, setView] = useState<'grid' | 'map'>('grid')
 
   const f: Filters = {
     rubrique,
@@ -127,10 +126,6 @@ export default function Listings({ rubrique, favoritesOnly = false }: { rubrique
                 <option value="proximite">Proximité des commodités</option>
               </select>
             </label>
-            <div className="seg">
-              <button className={view === 'grid' ? 'on' : ''} onClick={() => setView('grid')} aria-label="Grille"><Grid size={16} /></button>
-              <button className={view === 'map' ? 'on' : ''} onClick={() => setView('map')} aria-label="Carte"><Map size={16} /></button>
-            </div>
           </div>
         </div>
 
@@ -141,13 +136,6 @@ export default function Listings({ rubrique, favoritesOnly = false }: { rubrique
             <div className="row wrap mt-24">
               <Link to="/recherche-sur-mesure" className="btn btn-primary">Recherche sur-mesure <ArrowRight size={16} /></Link>
               {!favoritesOnly && <button className="btn btn-outline" onClick={clear}>Effacer les filtres</button>}
-            </div>
-          </div>
-        ) : view === 'map' ? (
-          <div className="lp-map">
-            <MapMock label={zone ? zone.name : 'Grand Tunis'} />
-            <div className="lp-map-list">
-              {shown.map((l) => <PropertyCard key={l.id} listing={l} compact />)}
             </div>
           </div>
         ) : (

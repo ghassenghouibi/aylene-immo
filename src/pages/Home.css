@@ -36,7 +36,3 @@
 .est-val { font-size: clamp(26px, 3vw, 36px); color: #fff; line-height: 1.1; margin-top: 6px; }
 @media (max-width: 900px) { .est-grid { grid-template-columns: 1fr; gap: 32px; } }
 
-.zones { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 220px; gap: 18px; }
-.zones .zc-big { grid-row: span 2; min-height: 0; }
-@media (max-width: 900px) { .zones { grid-template-columns: 1fr 1fr; } .zones .zc-big { grid-column: span 2; grid-row: span 1; } }
-@media (max-width: 560px) { .zones { grid-template-columns: 1fr; } .zones .zc-big { grid-column: span 1; } }
